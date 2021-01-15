@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import GlobalStyle from './globalStyles'
 
 const Title = styled.h1`
   font-family: Arial, sans-serif;
@@ -12,9 +13,12 @@ const Title = styled.h1`
 
 const App = () => {
   return (
-    <Title>
-      Hello from Catagram!!!
-    </Title>
+    <>
+      <GlobalStyle />
+      <Title>
+        Hello from Catagram!!!
+      </Title>
+    </>
   )
 }
 

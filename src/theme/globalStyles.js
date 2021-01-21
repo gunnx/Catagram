@@ -1,9 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`        
-  /* stylelint-disable */
-  /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
   /* Document
      ========================================================================== */
 
@@ -350,6 +347,25 @@ const GlobalStyle = createGlobalStyle`
 
   [hidden] {
     display: none;
+  }
+
+  /** 
+  * Catagram specific overrides
+ */
+ 
+  html, body { height: 100%; }
+  body {
+    background-color: ${(props) => props.theme.colors.body};
+    color: ${props => props.theme.colors.text};
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  #root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
   /* stylelint-enable */
 `

@@ -1,0 +1,48 @@
+import { render, screen } from '@testing-library/react'
+import { createMemoryHistory } from 'history'
+import MasterLayout from './MasterLayout'
+import TestProviders from '../mocks/TestProviders'
+import useFetchCats from '../hooks/useFetchCats'
+jest.mock('../hooks/useFetchCats')
+
+describe('MasterLayout', () => {
+  it('redirects to /login when user not defined', () => {
+    const history = createMemoryHistory()
+    render(
+      <TestProviders history={history} hasRouter><MasterLayout /></TestProviders>
+    )
+
+    expect(history.location.pathname).toBe('/login')
+  })
+
+  it('renders header, main and footer content', () => {
+    useFetchCats.mockImplementation(() => {
+      return {
+        isLoading: false,
+        page: 0,
+        data: []
+      }
+    })
+    render(
+      <TestProviders hasRouter hasTheme>
+        <MasterLayout user='test' toggleTheme={jest.fn()} />
+      </TestProviders>
+    )
+
+    expect(screen.getByRole('banner')).toBeInTheDocument()
+    expect(screen.getByRole('main')).toBeInTheDocument()
+    expect(screen.getByRole('contentinfo')).toBeInTheDocument()
+  })
+
+  it('renders page not found when route is not a valid one', () => {
+    const history = createMemoryHistory()
+    history.push('/does-not-exist')
+    render(
+      <TestProviders history={history} hasRouter hasTheme>
+        <MasterLayout user='test' toggleTheme={jest.fn()} />
+      </TestProviders>
+    )
+
+    expect(screen.getByText(/page not found/i)).toBeInTheDocument()
+  })
+})

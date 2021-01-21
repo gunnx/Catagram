@@ -3,4 +3,5 @@
 .vscode
 *.swp
 dist
+coverage
 

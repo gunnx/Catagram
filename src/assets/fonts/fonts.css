@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'billabongregular';
+    font-display: fallback;
+    src: local('billabongregular'), local('billabongregular'),
+    url('billabong-regular.woff2') format('woff2'),
+    url('billabong-regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}

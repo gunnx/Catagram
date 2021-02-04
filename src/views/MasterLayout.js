@@ -1,3 +1,4 @@
+import loadable from '@loadable/component'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Redirect, Route, Switch } from 'react-router-dom'
@@ -8,7 +9,8 @@ import Home from './Home/Home'
 import NoMatch from '../components/NoMatch'
 import SiteFooter from '../containers/SiteFooter/SiteFooter'
 import SiteHeader from '../containers/SiteHeader/SiteHeader'
-import Upload from './Upload/Upload'
+
+const UploadAsync = loadable(() => import('./Upload/Upload'))
 
 const SiteContainer = styled.div`
   display: flex;
@@ -43,7 +45,7 @@ const MasterLayout = (props) => {
                 <Home user={user} />
               </Route>
               <Route exact path='/upload'>
-                <Upload user={user} />
+                <UploadAsync user={user} />
               </Route>
               <Route path='*'>
                 <NoMatch />

@@ -3,4 +3,4 @@ import '@testing-library/jest-dom/extend-expect'
 import 'jest-styled-components'
 import 'jest-localstorage-mock'
 
-global.alert = (msg) => { console.log(msg) }
+global.alert = (msg) => { }

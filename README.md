@@ -35,8 +35,15 @@ Run coverage report, report available under `coverage/lcov-report/index.html`
 npm run coverage
 ```
 
+## Linting
+Using [standardJS](https://standardjs.com) for JS and [stylelint](https://stylelint.io) for CSS
+```
+npm run lint
+npm run lint:css
+```
+
 ## Production
-To run a production build 
+To run a production build, outputs to `dist` folder
 ```
 npm run build
 ```

@@ -6,6 +6,7 @@ import IdeaCat from '../../components/Icons/IdeaCat'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import InfoPanel from '../../components/InfoPanel'
 import Loader from '../../components/Loader'
+import CatImage from './CatImage/CatImage'
 
 const Grid = styled.div`
   display: grid;
@@ -14,7 +15,6 @@ const Grid = styled.div`
 `
 
 const Card = styled.div`
-  background: grey;
   display: grid;
   position: relative;
   
@@ -24,14 +24,6 @@ const Card = styled.div`
     grid-area: 1 / 1 / 2 / 2;
     padding-top: 100%;
   }
-`
-
-const Image = styled.img`
-  grid-area: 1 / 1 / 2 /2;
-  height: 100%;
-  max-width: 100%;
-  object-fit: cover;
-  width: 100%;
 `
 
 // Shared with Infinite loader to ensure space for Actions
@@ -90,7 +82,7 @@ const ImageGrid = (props) => {
         {images.map((image) => {
           return (
             <Card key={image.id}>
-              <Image src={image.url} alt={image.original_filename} />
+              <CatImage image={image} />
               <Actions>
                 <ActionBar image={image} user={user} />
               </Actions>

@@ -27,6 +27,9 @@ const lightTheme = {
     progress: {
       background: '#e0e0de',
       fill: '#ef6c00'
+    },
+    image: {
+      background: '#eee'
     }
   }
 }
@@ -44,7 +47,7 @@ const darkTheme = {
       text: '#eee'
     },
     input: {
-      background: '#fff'
+      background: '#ccc'
     },
     header: {
       background: '#807d7d',
@@ -57,6 +60,9 @@ const darkTheme = {
     progress: {
       background: '#e0e0de',
       fill: '#ef6c00'
+    },
+    image: {
+      background: '#444'
     }
   }
 }

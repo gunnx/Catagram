@@ -30,14 +30,16 @@ const shake = keyframes`
 
 const LoginBox = styled.div`
   align-items: center;
+  animation-duration: 1s;
+  animation-name: ${props => props.isError ? shake : 'none'};
   border: 1px solid rgb(219,219,219);
   display: flex;
   flex-direction: column;
   height: 50vh;
   justify-content: center;
+  margin: 0 1rem;
+  padding: 2rem 0;
   width: 500px;
-  animation: ${props => props.isError ? shake : 'none'};
-  animation-duration: 1s 
 `
 
 const Label = styled.label`
@@ -65,9 +67,9 @@ const Form = styled.form`
 `
 
 const FormError = styled.div`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin: 0.5rem 0;
+  margin: 0.5rem;
   text-align: center;
 `
 
@@ -98,6 +100,7 @@ const Login = (props) => {
     <Container>
       <LoginBox isError={error}>
         <CompanyHeading size={1}>Catagram</CompanyHeading>
+        <FormError id='login-error' role={error ? 'alert' : undefined}> {error} </FormError>
         <Form id='loginForm' method='POST'>
           <Label>
             <InputTitle>Username</InputTitle>
@@ -128,7 +131,7 @@ const Login = (props) => {
             type='button' onClick={login}
           >Log in
           </Button>
-          <FormError id='login-error' role={error ? 'alert' : undefined}> {error} </FormError>
+
         </Form>
       </LoginBox>
     </Container>

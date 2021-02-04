@@ -62,7 +62,7 @@ describe('useFileUpload', () => {
       jest.runAllTimers()
     })
 
-    expect(result.current.message).toBe('Redirecting you to home page...')
+    expect(result.current.message).toBe('File uploaded! Redirecting you to home page...')
     expect(result.current.progress).toBe(0)
     expect(result.current.complete).toBe(true)
 

@@ -22,7 +22,7 @@ const useFileUpload = (user) => {
       })
 
       if (success) {
-        setMessage('Redirecting you to home page...')
+        setMessage('File uploaded! Redirecting you to home page...')
         setProgress(0)
 
         setTimeout(() => {

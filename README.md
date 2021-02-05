@@ -13,7 +13,7 @@ Instagram style app  _only_ for Cats. Uses [CatAPI](https://thecatapi.com) as th
 <img src="https://img.shields.io/badge/node-v12.4.1-brightgreen">
 ## Setup
 ```bash
-git clone https://github.com/gunn_x/Catagram
+git clone https://github.com/gunnx/Catagram.git
 cd Catagram
 npm install
 ```

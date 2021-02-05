@@ -1,6 +1,6 @@
 <img align="left" width="60" height="60" style="margin-right:10px" src="https://raw.githubusercontent.com/gunnx/Catagram/main/src/assets/svg/logo.svg" alt="Catagram">
 
-#&nbsp;Catagram
+# Catagram
 
 Instagram style app  _only_ for Cats. Uses [CatAPI](https://thecatapi.com) as the backend.
 
